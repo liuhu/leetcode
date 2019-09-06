@@ -1,9 +1,7 @@
 package me.liuhu.study.effective.java.buffer;
-import com.example.tutorial.AddressBookProtos.AddressBook;
-import com.example.tutorial.AddressBookProtos.Person;
+import me.liuhu.study.effective.java.buffer.AddressBookProtos.AddressBook;
+import me.liuhu.study.effective.java.buffer.AddressBookProtos.Person;
 import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.PrintStream;
 
 
 /**
