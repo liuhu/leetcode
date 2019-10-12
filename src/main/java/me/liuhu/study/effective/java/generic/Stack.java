@@ -19,8 +19,9 @@ public class Stack<E> {
         elements[size++] = e;
     }
     public E pop() {
-        if (size == 0)
+        if (size == 0) {
             throw new EmptyStackException();
+        }
         E result = elements[--size];
         elements[size] = null; // Eliminate obsolete reference
         return result;
@@ -44,8 +45,9 @@ public class Stack<E> {
      * doubling the capacity each time the array needs to grow.
      */
     private void ensureCapacity() {
-        if (elements.length == size)
+        if (elements.length == size) {
             elements = Arrays.copyOf(elements, 2 * size + 1);
+        }
     }
 
     public static void main(String[] args) {
@@ -60,8 +62,9 @@ public class Stack<E> {
     }
 
     public void pushAll(Iterable<E> src) {
-        for (E e : src)
+        for (E e : src) {
             push(e);
+        }
     }
 
     /**
@@ -69,7 +72,8 @@ public class Stack<E> {
      * @param src
      */
     public void pushAll2(Iterable<? extends E> src) {
-        for (E e : src)
+        for (E e : src) {
             push(e);
+        }
     }
 }

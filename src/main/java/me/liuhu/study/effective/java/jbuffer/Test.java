@@ -64,6 +64,10 @@ public class Test {
     private static void deserializing() throws Exception {
         Codec<AddressBookProtosPOJO> simpleTypeCodec = ProtobufProxy
                 .create(AddressBookProtosPOJO.class);
+
+        File directory = new File("");
+        String courseFile = directory.getCanonicalPath() ;
+
         File file = new File("/Users/liuhu/Work/Source/MySource/effective-java/src/main/java/me/liuhu/study/effective/java/jbuffer/addressBookProtos.bin");
         byte[] fileContent = Files.readAllBytes(file.toPath());
         AddressBookProtosPOJO sss =  simpleTypeCodec.decode(fileContent);
