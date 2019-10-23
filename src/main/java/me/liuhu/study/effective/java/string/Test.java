@@ -56,6 +56,14 @@ public class Test {
         // 4～8 的例子都是true，说明java8中 常量池是全局共享的吗？
 
 
+        // s2 获取的是常量池中的引用
+        String s1 = new String("1") + new String("1");
+        s1.intern();
+        String s2 = "11";
+        System.out.print("9---- ");
+        System.out.println(s1 == s2);
+
+
 
         Long a = 5L;
         Long b = 5L;
