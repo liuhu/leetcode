@@ -1,4 +1,4 @@
-package me.liuhu.study.effective.java.aqs;
+package me.liuhu.study.concurrency.aqs;
 
 import java.util.concurrent.locks.LockSupport;
 

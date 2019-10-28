@@ -1,6 +1,6 @@
-package me.liuhu.study.effective.java.string;
+package me.liuhu.study.test.string;
 
-import me.liuhu.study.effective.java.string.inner.Class3;
+import me.liuhu.study.test.string.inner.Class3;
 
 import java.util.Arrays;
 import java.util.List;

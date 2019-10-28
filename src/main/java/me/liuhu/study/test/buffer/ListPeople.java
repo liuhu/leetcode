@@ -1,6 +1,6 @@
-package me.liuhu.study.effective.java.buffer;
-import me.liuhu.study.effective.java.buffer.AddressBookProtos.AddressBook;
-import me.liuhu.study.effective.java.buffer.AddressBookProtos.Person;
+package me.liuhu.study.test.buffer;
+import me.liuhu.study.test.buffer.AddressBookProtos.AddressBook;
+import me.liuhu.study.test.buffer.AddressBookProtos.Person;
 import java.io.FileInputStream;
 
 

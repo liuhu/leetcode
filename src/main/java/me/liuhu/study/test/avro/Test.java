@@ -1,4 +1,4 @@
-package me.liuhu.study.effective.java.avro;
+package me.liuhu.study.test.avro;
 
 import org.apache.avro.Schema;
 import org.apache.avro.file.DataFileReader;

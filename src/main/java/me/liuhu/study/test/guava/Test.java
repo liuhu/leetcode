@@ -1,4 +1,4 @@
-package me.liuhu.study.effective.java.guava;
+package me.liuhu.study.test.guava;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;

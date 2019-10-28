@@ -1,4 +1,4 @@
-package me.liuhu.study.effective.java.aqs;
+package me.liuhu.study.concurrency.aqs;
 
 import lombok.extern.slf4j.Slf4j;
 

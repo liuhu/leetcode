@@ -1,4 +1,4 @@
-package me.liuhu.study.effective.java.guava;
+package me.liuhu.study.test.guava;
 
 import lombok.Data;
 

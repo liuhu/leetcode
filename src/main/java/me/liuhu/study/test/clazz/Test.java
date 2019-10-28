@@ -1,4 +1,4 @@
-package me.liuhu.study.effective.java.clazz;
+package me.liuhu.study.test.clazz;
 
 /**
  * @description:

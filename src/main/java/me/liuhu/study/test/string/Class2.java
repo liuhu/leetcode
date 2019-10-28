@@ -1,4 +1,4 @@
-package me.liuhu.study.effective.java.string;
+package me.liuhu.study.test.string;
 
 /**
  * @description:

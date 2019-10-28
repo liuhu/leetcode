@@ -1,12 +1,12 @@
-package me.liuhu.study.effective.java.buffer;
+package me.liuhu.study.test.buffer;
 
 /**
  * @description:
  * @author: LiuHu
  * @create: 2019-05-15 17:04
  **/
-import me.liuhu.study.effective.java.buffer.AddressBookProtos.AddressBook;
-import me.liuhu.study.effective.java.buffer.AddressBookProtos.Person;
+import me.liuhu.study.test.buffer.AddressBookProtos.AddressBook;
+import me.liuhu.study.test.buffer.AddressBookProtos.Person;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

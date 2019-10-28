@@ -1,4 +1,4 @@
-package me.liuhu.study.effective.java.jbuffer;
+package me.liuhu.study.test.jbuffer;
 
 import com.baidu.bjf.remoting.protobuf.FieldType;
 import com.baidu.bjf.remoting.protobuf.annotation.Protobuf;
