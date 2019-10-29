@@ -41,7 +41,6 @@ public class ArrayDemo {
         char[] chars = text.toCharArray();
         List<String> stringList = IntStream.range(0, text.length())
                 .mapToObj(i -> String.valueOf(chars[i])).collect(Collectors.toList());
-
         LinkedList<String> linkedList = new LinkedList<>(stringList);
         while (null != linkedList.peekFirst() && linkedList.size() > 1) {
             if (!linkedList.pollFirst().equals(linkedList.pollLast())) {
@@ -52,27 +51,55 @@ public class ArrayDemo {
     }
 
 
+    public static class MyLinkedList<E> {
+        private Node<E> firstNode;
+        private Node<E> lastNode;
+        private int size;
+
+        public E getFirst() {
+            return null != firstNode ? firstNode.getData() : null;
+        }
+
+        public Node<E> getFirstNode() {
+            return firstNode;
+        }
+
+        public int size() {
+            return size;
+        }
+
+        public void add(E data) {
+            if (null == firstNode) {
+                Node<E> node = new Node(data, null);
+                firstNode = node;
+                lastNode = node;
+            } else {
+                Node<E> node = new Node(data, null);
+                lastNode.next = node;
+                lastNode = node;
+            }
+            size = size + 1;
+        }
+    }
+
     /**
      * 链表节点
      */
-    public class Node<E> {
+    public static class Node<E> {
         private E data;
         private Node next;
 
-        public Object getData() {
-            return data;
+        public Node(E data, Node next) {
+            this.data = data;
+            this.next = next;
         }
 
-        public void setData(E data) {
-            this.data = data;
+        public E getData() {
+            return data;
         }
 
         public Node getNext() {
             return next;
-        }
-
-        public void setNext(Node next) {
-            this.next = next;
         }
     }
 }
