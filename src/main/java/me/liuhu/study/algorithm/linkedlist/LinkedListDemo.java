@@ -1,4 +1,4 @@
-package me.liuhu.study.algorithm.array;
+package me.liuhu.study.algorithm.linkedlist;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
  * @author: LiuHu
  * @create: 2019/10/28
  **/
-public class ArrayDemo {
+public class LinkedListDemo {
 
     /**
      * 是否是回文文本
@@ -50,6 +50,38 @@ public class ArrayDemo {
         return true;
     }
 
+    /**
+     * 链表转置
+     * @param oldFirstNode
+     * @return new firstNode
+     */
+    public static Node reverse(Node oldFirstNode) {
+        // 新的首个节点
+        Node newFirst = oldFirstNode;
+        while (null != oldFirstNode && null != oldFirstNode.next) {
+            Node next = oldFirstNode.next;
+            Node next2 = oldFirstNode.next.next;
+            // 2 -> 1, 将第二个节点作为首节点，即 oldFirstNode.next.next 为 newFirst
+            next.next = newFirst;
+            // 1 -> 3
+            oldFirstNode.next = next2;
+            // 新的首节点
+            newFirst = next;
+        }
+        return newFirst;
+    }
+
+    /**
+     * 打印
+     * @param firstNode
+     */
+    public static void printNote(Node firstNode) {
+        Node node = firstNode;
+        while (null != node) {
+            System.out.println(node.data);
+            node = node.next;
+        }
+    }
 
     public static class MyLinkedList<E> {
         private Node<E> firstNode;
