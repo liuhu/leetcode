@@ -36,11 +36,55 @@ public class LinkedListTest {
         Assert.assertFalse(LinkedListDemo.isLoopbackTextByLinkedList("123"));
     }
 
+    /**
+     * 单项链表 回文测试
+     */
     @Test
-    public void isLoopbackTextByOriginalLinkedList_False() {
-        Assert.assertFalse(LinkedListDemo.isLoopbackTextByLinkedList("123"));
+    public void isLoopbackTextByOriginalLinkedList_True() {
+        LinkedListDemo.MyLinkedList<String> list0 = new LinkedListDemo.MyLinkedList<>();
+        list0.add("1");
+        list0.add("2");
+        list0.add("3");
+        list0.add("3");
+        list0.add("2");
+        list0.add("1");
+        Assert.assertTrue(LinkedListDemo.isLoopbackTextByOriginalLinkedList(list0.getFirstNode()));
+
+
+        LinkedListDemo.MyLinkedList<String> list1 = new LinkedListDemo.MyLinkedList<>();
+        list1.add("1");
+        list1.add("2");
+        list1.add("3");
+        list1.add("2");
+        list1.add("1");
+        Assert.assertTrue(LinkedListDemo.isLoopbackTextByOriginalLinkedList(list1.getFirstNode()));
+
+        LinkedListDemo.MyLinkedList<String> list2 = new LinkedListDemo.MyLinkedList<>();
+        list2.add("1");
+        Assert.assertTrue(LinkedListDemo.isLoopbackTextByOriginalLinkedList(list2.getFirstNode()));
     }
 
+    @Test
+    public void isLoopbackTextByOriginalLinkedList_False() {
+        LinkedListDemo.MyLinkedList<String> linkedList = new LinkedListDemo.MyLinkedList<>();
+        linkedList.add("1");
+        linkedList.add("2");
+        linkedList.add("3");
+        linkedList.add("1");
+        linkedList.add("1");
+        Assert.assertFalse(LinkedListDemo.isLoopbackTextByOriginalLinkedList(linkedList.getFirstNode()));
+
+        LinkedListDemo.MyLinkedList<String> list1 = new LinkedListDemo.MyLinkedList<>();
+        list1.add("1");
+        list1.add("2");
+        list1.add("2");
+        list1.add("0");
+        Assert.assertFalse(LinkedListDemo.isLoopbackTextByOriginalLinkedList(list1.getFirstNode()));
+    }
+
+    /**
+     * 实现链表
+     */
     @Test
     public void testLinkedList() {
         LinkedListDemo.MyLinkedList<String> linkedList = new LinkedListDemo.MyLinkedList<>();
@@ -69,6 +113,9 @@ public class LinkedListTest {
         }
     }
 
+    /**
+     * 链表打印
+     */
     @Test
     public void testPrint() {
         LinkedListDemo.MyLinkedList<String> linkedList = new LinkedListDemo.MyLinkedList<>();
@@ -78,12 +125,16 @@ public class LinkedListTest {
         LinkedListDemo.printNote(linkedList.getFirstNode());
     }
 
+    /**
+     * 链表转置
+     */
     @Test
     public void testReverse() {
         LinkedListDemo.MyLinkedList<String> linkedList = new LinkedListDemo.MyLinkedList<>();
         linkedList.add("1");
         linkedList.add("2");
         linkedList.add("3");
+        linkedList.add("4");
         LinkedListDemo.printNote(LinkedListDemo.reverse(linkedList.getFirstNode()));
     }
 }

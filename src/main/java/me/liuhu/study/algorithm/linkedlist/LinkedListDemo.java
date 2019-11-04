@@ -50,6 +50,66 @@ public class LinkedListDemo {
         return true;
     }
 
+
+    public static boolean isLoopbackTextByOriginalLinkedList(Node fistNode) {
+        Node slow  = fistNode;
+        Node fast = fistNode;
+        // 慢指针一次跳1格，快指针一次跳2格。当快指针到终点是，慢指针在中间位置。
+        // 但要注意奇偶链表但情况
+        while (null != fast.next && null != fast.next.next) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        // 获取中间节点
+        Node mid;
+        boolean isContainMid;
+        // 奇偶判定
+        if (null == fast.next) { // 12(3)21
+            mid = slow;
+            isContainMid = false;
+        } else { // 12(2)1
+            mid = slow.next;
+            isContainMid = true;
+        }
+
+        // 转置 1～mid
+        Node newFirst = fistNode;
+        while (null != fistNode && null != fistNode.next) {
+            if (fistNode.next == mid) {
+                break;
+            }
+
+            Node next = fistNode.next;
+            Node next2 = fistNode.next.next;
+            // 2 -> 1, 将第二个节点作为首节点，即 oldFirstNode.next.next 为 newFirst
+            next.next = newFirst;
+            // 1 -> 3
+            fistNode.next = next2;
+            // 新的首节点
+            newFirst = next;
+        }
+
+        // 奇偶位矫正
+        Node node = newFirst;
+        Node compare = null;
+        if (isContainMid) {
+            compare = mid;
+        } else {
+            compare = mid.next;
+        }
+        // 比较
+        while (null != compare) {
+            if (!node.data.equals(compare.data)) {
+                return false;
+            }
+            node = node.next;
+            compare = compare.next;
+        }
+
+        return true;
+    }
+
     /**
      * 链表转置
      * @param oldFirstNode
