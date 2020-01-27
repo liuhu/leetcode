@@ -7,7 +7,8 @@ import java.util.UUID;
  * @author: LiuHu
  * @create: 2020/1/27
  **/
-public class WalletRpcService implements IWalletRpcService {
+public class WalletRpcServiceMock implements IWalletRpcService {
+    @Override
     public String moveMoney(String id, Long buyerId, Long sellerId, Double amount) {
         return UUID.randomUUID().toString();
     }

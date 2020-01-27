@@ -34,6 +34,7 @@ public class TransactionTest {
             }
         };
         transaction.setRedisDistributedLock(mockLock);
+        transaction.setWalletRpcService(new WalletRpcServiceMock());
         transaction.setAmount(122.2);
         boolean status = transaction.execute();
 
@@ -54,6 +55,7 @@ public class TransactionTest {
         Transaction transaction = new Transaction(preAssignedId, buyerId, sellerId, productId, orderId);
         transaction.setAmount(122.2);
 
+        transaction.setWalletRpcService(new WalletRpcServiceMock());
         transaction.setRedisDistributedLock(new RedisDistributedLockMock());
         boolean status = transaction.execute();
 
@@ -89,6 +91,7 @@ public class TransactionTest {
         };
 
         transaction.setRedisDistributedLock(mockLock);
+        transaction.setWalletRpcService(new WalletRpcServiceMock());
         transaction.setAmount(122.2);
 
         boolean status = transaction.execute();

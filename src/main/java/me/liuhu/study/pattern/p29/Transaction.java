@@ -23,6 +23,7 @@ public class Transaction {
 
     // 通过注入的方式加入外部依赖, 方便 Mock
     private IRedisDistributedLock redisDistributedLock;
+    private IWalletRpcService walletRpcService;
 
     private Transaction() {
 
@@ -82,7 +83,6 @@ public class Transaction {
                 return false;
             }
 
-            WalletRpcService walletRpcService = new WalletRpcService();
             String walletTransactionId = walletRpcService.moveMoney(id, buyerId, sellerId, amount);
             if (walletTransactionId != null) {
                 this.walletTransactionId = walletTransactionId;
