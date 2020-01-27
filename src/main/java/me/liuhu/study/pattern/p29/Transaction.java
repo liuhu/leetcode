@@ -29,6 +29,16 @@ public class Transaction {
     }
 
     public Transaction(String preAssignedId, Long buyerId, Long sellerId, Long productId, String orderId) {
+        generateTransactionId(preAssignedId);
+        this.buyerId = buyerId;
+        this.sellerId = sellerId;
+        this.productId = productId;
+        this.orderId = orderId;
+        this.status = STATUS.TO_BE_EXECUTD;
+        this.createTimestamp = System.currentTimeMillis();
+    }
+
+    private void generateTransactionId(String preAssignedId) {
         if (preAssignedId != null && !preAssignedId.isEmpty()) {
             this.id = preAssignedId;
         } else {
@@ -37,12 +47,6 @@ public class Transaction {
         if (!this.id.startsWith("t_")) {
             this.id = "t_" + preAssignedId;
         }
-        this.buyerId = buyerId;
-        this.sellerId = sellerId;
-        this.productId = productId;
-        this.orderId = orderId;
-        this.status = STATUS.TO_BE_EXECUTD;
-        this.createTimestamp = System.currentTimeMillis();
     }
 
     /**
