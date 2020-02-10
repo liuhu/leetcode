@@ -23,7 +23,7 @@ public class InterruptInvalidTest2 implements Runnable {
                 Thread.sleep(10);
             } catch (InterruptedException e) {
                 log.error("run error", e);
-                // 将中断信息恢复
+                // 中断程序
                 Thread.currentThread().interrupt();
             }
         }
