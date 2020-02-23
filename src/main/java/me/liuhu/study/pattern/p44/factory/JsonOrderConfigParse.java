@@ -1,15 +1,14 @@
-package me.liuhu.study.pattern.p44;
+package me.liuhu.study.pattern.p44.factory;
+
 
 /**
  * @description:
  * @author: LiuHu
  * @create: 2020/2/23
  **/
-public class JsonConfigParser implements IOrderConfigParser {
-
+public class JsonOrderConfigParse implements IOrderConfigParser {
     @Override
     public OrderConfig parse(String filePath) {
-        // TODO; json to bean
         return new OrderConfig();
     }
 }

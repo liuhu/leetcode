@@ -1,4 +1,4 @@
-package me.liuhu.study.pattern.p44;
+package me.liuhu.study.pattern.p44.simple;
 
 import java.util.HashMap;
 
