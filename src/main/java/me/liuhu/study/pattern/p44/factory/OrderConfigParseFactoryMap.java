@@ -1,8 +1,5 @@
 package me.liuhu.study.pattern.p44.factory;
 
-import me.liuhu.study.pattern.p44.simple.IOrderConfigParser;
-import me.liuhu.study.pattern.p44.simple.JsonConfigParser;
-import me.liuhu.study.pattern.p44.simple.XmlConfigParser;
 
 import java.util.HashMap;
 
@@ -11,7 +8,7 @@ import java.util.HashMap;
  * @author: LiuHu
  * @create: 2020/2/23
  **/
-public class OrderConfigParseFactory {
+public class OrderConfigParseFactoryMap {
 
     private static final HashMap<String, IOrderConfigParseFactory> parseMap = new HashMap<>(10);
     static {

@@ -12,7 +12,7 @@ public class OrderConfigLoader {
     public static void main(String[] args) {
 
         String configFile = "config.xml";
-        IOrderConfigParseFactory configParseFactory = OrderConfigParseFactory.getFactory(getSuffix(configFile));
+        IOrderConfigParseFactory configParseFactory = OrderConfigParseFactoryMap.getFactory(getSuffix(configFile));
         IOrderConfigParser configParser = configParseFactory.createParser();
         OrderConfig orderConfig = configParser.parse(configFile);
     }
