@@ -8,16 +8,16 @@ import java.lang.reflect.Proxy;
  * @create: 2020/2/26
  **/
 public class WorkerProxy3 {
-    private Object object;
 
-    public WorkerProxy3(Object object) {
-        this.object = object;
-    }
-
-    public IWorker createProxy() {
+    /**
+     * 创建代理对象
+     * @param worker 被代理对象
+     * @return
+     */
+    public IWorker createProxy(IWorker worker) {
         return (IWorker) Proxy.newProxyInstance(
-                object.getClass().getClassLoader(),
-                object.getClass().getInterfaces(),
-                new WorkerInvocationHandler(object));
+                worker.getClass().getClassLoader(),
+                worker.getClass().getInterfaces(),
+                new WorkerInvocationHandler(worker));
     }
 }

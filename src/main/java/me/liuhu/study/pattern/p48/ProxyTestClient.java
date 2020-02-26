@@ -1,6 +1,5 @@
 package me.liuhu.study.pattern.p48;
 
-import java.lang.reflect.Proxy;
 
 /**
  * @description:
@@ -17,7 +16,7 @@ public class ProxyTestClient {
         IWorker worker2 = new WorkerProxy2();
         worker2.process();
 
-        WorkerProxy3 workerProxy3 = new WorkerProxy3(worker1);
-        workerProxy3.createProxy().process();
+        WorkerProxy3 workerProxy3 = new WorkerProxy3();
+        workerProxy3.createProxy(worker1).process();
     }
 }
