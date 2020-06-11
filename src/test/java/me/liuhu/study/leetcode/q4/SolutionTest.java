@@ -10,6 +10,9 @@ import org.junit.Test;
  **/
 public class SolutionTest {
 
+    /**
+     * 执行未通过，超出内存
+     */
     @Test
     public void runFoo2() {
         System.out.println("run test ... ");
