@@ -14,14 +14,23 @@ public class SolutionTest {
      * 执行未通过，超出内存
      */
     @Test
-    public void runFoo2() {
+    public void run1() {
         System.out.println("run test ... ");
         Solution solution = new Solution1();
+        runTest(solution);
+    }
 
+    @Test
+    public void run2() {
+        System.out.println("run test ... ");
+        Solution solution = new Solution2();
+        runTest(solution);
+    }
+
+    private void runTest(Solution solution) {
         ListNode l1 = new ListNode(2);
         l1.next = new ListNode(4);
         l1.next.next = new ListNode(3);
-
 
         ListNode l2 = new ListNode(5);
         l2.next = new ListNode(6);
