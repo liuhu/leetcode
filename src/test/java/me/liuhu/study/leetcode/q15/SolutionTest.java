@@ -1,7 +1,5 @@
 package me.liuhu.study.leetcode.q15;
 
-import me.liuhu.study.leetcode.q15.Solution;
-import me.liuhu.study.leetcode.q15.Solution1;
 import org.junit.Test;
 
 import java.util.List;
@@ -23,7 +21,19 @@ public class SolutionTest {
         runTest(solution);
     }
 
+    /**
+     * 用 ArrayList 排序后，减少循环次数，反而比原来变慢了3秒，为啥呢？
+     */
+    @Test
+    public void run2() {
+        System.out.println("run test ... ");
+        Solution solution = new Solution2();
+        runTest(solution);
+    }
+
     private void runTest(Solution solution) {
+        long startTime = System.currentTimeMillis();
+
         // int[] nums = {-2,0,1,1,2};
         // int[] nums = {-1, 0, 1, 2, -1, -4};
         int[] nums = {
@@ -3029,5 +3039,7 @@ public class SolutionTest {
         };
         List<List<Integer>> ss = solution.threeSum(nums);
         System.out.println(ss);
+
+        System.out.println("耗费：" + (System.currentTimeMillis() - startTime));
     }
 }
