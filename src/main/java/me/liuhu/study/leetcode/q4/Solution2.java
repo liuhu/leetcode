@@ -19,14 +19,18 @@ public class Solution2 implements Solution {
         boolean isCarryBit = false;
         int l1Num = 0;
         int l2Num = 0;
-        while (null != cl1 && null != cl2) {
+        while (null != cl1 || null != cl2 || isCarryBit) {
             if (null != cl1) {
                 l1Num = cl1.val;
                 cl1 = cl1.next;
+            } else {
+                l1Num = 0;
             }
             if (null != cl2) {
                 l2Num = cl2.val;
                 cl2 = cl2.next;
+            } else {
+                l2Num = 0;
             }
             // 处理进位
             int sum = 0;
