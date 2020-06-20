@@ -137,4 +137,22 @@ public class LinkedListTest {
         linkedList.add("4");
         LinkedListDemo.printNote(LinkedListDemo.reverse(linkedList.getFirstNode()));
     }
+
+    @Test
+    public void testAddNode() {
+        LinkedListDemo.MyLinkedList<String> linkedList = new LinkedListDemo.MyLinkedList<>();
+        linkedList.add("1");
+        linkedList.add("3");
+        linkedList.add("5");
+        LinkedListDemo listDemo = new LinkedListDemo();
+        LinkedListDemo.Node firstNode = linkedList.getFirstNode();
+        firstNode = listDemo.addNode(firstNode, 1, "0");
+        LinkedListDemo.printNote(firstNode);
+        System.out.println("-----------------");
+        firstNode = listDemo.addNode(firstNode, 3, "2");
+        LinkedListDemo.printNote(firstNode);
+        System.out.println("-----------------");
+        firstNode = listDemo.addNode(firstNode, 5, "4");
+        LinkedListDemo.printNote(firstNode);
+    }
 }

@@ -12,6 +12,39 @@ import java.util.stream.IntStream;
 public class LinkedListDemo {
 
     /**
+     * 在链表中指定位置前添加节点
+     * @param fistNode 链表头节点
+     * @param index 位置
+     * @param nodeValue 新节点值
+     */
+    public Node addNode(Node fistNode, int index, String nodeValue) {
+        Node currentNode = fistNode;
+        Node preNode = null;
+        for (int i = 0; i < index; i++) {
+            // 保护
+            if (currentNode == null) {
+                break;
+            }
+            if (i == index - 1) {
+                // 新建节点
+                Node newNode = new Node(nodeValue, currentNode);
+                // 是在首节点添加
+                if (index == 1) {
+                    // 首节点为当前节点
+                    fistNode = newNode;
+                } else { //非首节点前添加
+                    preNode.next = newNode;
+                }
+                break;
+            }
+
+            preNode = currentNode;
+            currentNode = currentNode.next;
+        }
+        return fistNode;
+    }
+
+    /**
      * 是否是回文文本
      * @param text
      * @return
@@ -161,15 +194,13 @@ public class LinkedListDemo {
         }
 
         public void add(E data) {
+            Node<E> node = new Node(data, null);
             if (null == firstNode) {
-                Node<E> node = new Node(data, null);
                 firstNode = node;
-                lastNode = node;
             } else {
-                Node<E> node = new Node(data, null);
                 lastNode.next = node;
-                lastNode = node;
             }
+            lastNode = node;
             size = size + 1;
         }
     }
