@@ -8,6 +8,13 @@ package me.liuhu.study.leetcode.q11;
  **/
 public class Solution1 implements Solution {
 
+    /**
+     * 暴力解法
+     * 时间复杂度 O(n2)
+     * 空间复杂度 O(1)
+     * @param height
+     * @return
+     */
     @Override
     public int maxArea(int[] height) {
         int maxArea = -1;
