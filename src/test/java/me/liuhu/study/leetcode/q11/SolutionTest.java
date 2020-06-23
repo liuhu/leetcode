@@ -22,6 +22,14 @@ public class SolutionTest {
         Assert.assertEquals(49, area);
     }
 
+    @Test
+    public void run2() {
+        System.out.println("run test ... ");
+        Solution solution = new Solution2();
+        int area = runTest(solution);
+        Assert.assertEquals(49, area);
+    }
+
     private int runTest(Solution solution) {
         int[] height = {1,8,6,2,5,4,8,3,7};
         return solution.maxArea(height);
