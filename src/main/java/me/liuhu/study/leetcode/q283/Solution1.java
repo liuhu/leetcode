@@ -19,7 +19,7 @@ public class Solution1 implements Solution {
     public void moveZeroes(int[] nums) {
         // 左指针
         int left = 0;
-        // 右指针，下一个要交换到的位置
+        // 右指针，标识下一个要交换到的目标位置
         int right = nums.length - 1;
 
         while (left < right) {
@@ -30,13 +30,10 @@ public class Solution1 implements Solution {
                 continue;
             }
 
-            // 左边遇到 0，开始进行交换
+            // 左指针遇到 0，则开始进行移动，否则移动到下个指针
             if (nums[left] == 0) {
                 swap(nums, left, right);
-            }
-
-            // 不为0才移动左指针
-            if (nums[left] != 0) {
+            } else {
                 left ++;
             }
         }
