@@ -15,7 +15,7 @@ public class SolutionTest {
     public void run_solution1_swap_test() {
         Solution1 solution = new Solution1();
         int[] nums = {0 , 1, 2, 3, 0};
-        solution.swap(nums, 0,  3);
+        solution.orderSwap(nums, 0,  3);
         int[] expected = {1, 2, 3, 0, 0};
         Assert.assertArrayEquals(expected, nums);
     }
@@ -23,6 +23,12 @@ public class SolutionTest {
     @Test
     public void run_solution1() {
         Solution solution = new Solution1();
+        runTest(solution);
+    }
+
+    @Test
+    public void run_solution2() {
+        Solution solution = new Solution2();
         runTest(solution);
     }
 

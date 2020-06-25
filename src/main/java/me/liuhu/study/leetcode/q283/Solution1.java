@@ -8,8 +8,11 @@ package me.liuhu.study.leetcode.q283;
 public class Solution1 implements Solution {
 
     /**
-     * 必须在原数组上操作 -> 只能靠中间变量交换来解决
-     * 减少操作次数 -> 因为要保持相对顺序，就要尽量减少移动次数
+     * 双指针方法：
+     * 1、找到右边不是 0 的数组下标，作为待交换数字
+     * 2、左边找到为 0 的数组下标，则开始按顺序交换
+     * 3、当左边和右边相遇则结束
+     *
      *
      * 时间复杂度 O(n2)
      * 空间复杂度 O(1)
@@ -26,13 +29,13 @@ public class Solution1 implements Solution {
 
             // 找到最右边不为 0 的位置
             if (nums[right] == 0) {
-                right =  right - 1;
+                right --;
                 continue;
             }
 
             // 左指针遇到 0，则开始进行移动，否则移动到下个指针
             if (nums[left] == 0) {
-                swap(nums, left, right);
+                orderSwap(nums, left, right);
             } else {
                 left ++;
             }
@@ -41,11 +44,14 @@ public class Solution1 implements Solution {
 
     /**
      * 数组顺序交换
+     * int[] nums = {0, 1, 2, 3, 0};
+     * solution.orderSwap(nums, 0,  3);
+     * int[] expected = {1, 2, 3, 0, 0};
      * @param nums
      * @param indexLeft 要交换的数组下标
      * @param indexRight 目标数组下标
      */
-    protected void swap(int[] nums, int indexLeft, int indexRight) {
+    protected void orderSwap(int[] nums, int indexLeft, int indexRight) {
         while (indexLeft < indexRight) {
             int tmp = nums[indexLeft];
             nums[indexLeft] = nums[indexLeft + 1];
