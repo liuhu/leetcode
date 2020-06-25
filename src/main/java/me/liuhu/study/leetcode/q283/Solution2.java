@@ -1,7 +1,5 @@
 package me.liuhu.study.leetcode.q283;
 
-import java.util.Arrays;
-import java.util.HashMap;
 
 /**
  * @description:
@@ -11,7 +9,7 @@ import java.util.HashMap;
 public class Solution2 implements Solution {
 
     /**
-     * 题目本身有个限定，只要将非 0 的数据按顺序集中在数组左端，
+     * 题目本身有个限定，只要将非 0 的数据按顺序集中在数组左端
      * 后面的数据都给 0 即可
      *
      * 时间复杂度 O(n)
@@ -20,16 +18,20 @@ public class Solution2 implements Solution {
      */
     @Override
     public void moveZeroes(int[] nums) {
-        Object[] aa = new Object[10];
-        aa[0] = Arrays.asList("1", "2", "3");
-        aa[1] = "abc";
-        aa[2] = 123L;
-        System.out.println(aa);
-    }
+        // 记录非 0 的个数
+        int notZeroCount = 0;
 
-    public static void main(String[] args) {
-        Solution2 d = new Solution2();
+        // 非 0 的数字按遍历顺序放入数组
+        for (int num : nums) {
+            if (num != 0) {
+                nums[notZeroCount] = num;
+                notZeroCount ++;
+            }
+        }
 
-        d.moveZeroes(null);
+        // 其余的为 0
+        for (int i = notZeroCount; i < nums.length; i++) {
+            nums[i] = 0;
+        }
     }
 }
