@@ -25,7 +25,7 @@ public class Solution4 implements Solution {
                 continue;
             }
 
-            if (nums[i] == 0 && nums[j] != 0) {
+            if (nums[j] != 0) {
                 int tmp = nums[j];
                 nums[j] = nums[i];
                 nums[i] = tmp;
