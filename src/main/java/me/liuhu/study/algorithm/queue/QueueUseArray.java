@@ -22,9 +22,12 @@ public class QueueUseArray {
 
         // 数据搬移
         if (tail == objects.length) {
-            for (int i = 0; i < tail - head; i++) {
-                objects[i] = objects[head + i];
+            for (int i = head; i < tail; ++i) {
+                objects[i - head] = objects[i];
             }
+//            for (int i = 0; i < tail - head; i++) {
+//                objects[i] = objects[head + i];
+//            }
             tail = tail - head;
             head = 0;
         }
