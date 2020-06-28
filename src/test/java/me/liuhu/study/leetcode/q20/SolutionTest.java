@@ -17,6 +17,12 @@ public class SolutionTest {
         runTest(solution);
     }
 
+    @Test
+    public void run_solution2() {
+        Solution solution = new Solution2();
+        runTest(solution);
+    }
+
     private void runTest(Solution solution) {
         Assert.assertFalse(solution.isValid("("));
         Assert.assertTrue(solution.isValid(""));
