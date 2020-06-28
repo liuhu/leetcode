@@ -17,6 +17,13 @@ public class SolutionTest {
         runTest(solution);
     }
 
+    @Test
+    public void run2() {
+        System.out.println("run test ... ");
+        Solution solution = new Solution2();
+        runTest(solution);
+    }
+
 
     private void runTest(Solution solution) {
         int[] digits = {1,2,3,4};
