@@ -11,7 +11,7 @@ public class Solution2 implements Solution {
 
     /**
      * Time: O(n)
-     * Space: O(n)
+     * Space: O(1)
      * @param s
      * @return
      */

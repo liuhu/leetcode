@@ -19,7 +19,8 @@ public class Solution1 implements Solution {
         }
     };
     /**
-     *
+     * Time: O(n)
+     * Space: O(1)
      * @param s
      * @return
      */
@@ -49,7 +50,7 @@ public class Solution1 implements Solution {
     }
 
     /**
-     *
+     * 获取相对应的括号
      * @param c1
      * @param c2
      * @return
