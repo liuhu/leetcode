@@ -26,11 +26,4 @@ public class Solution1 implements Solution {
         }
         System.arraycopy(new_nums, 0, nums, 0, nums.length);
     }
-
-    private void swap(int[] nums, int index1, int index2) {
-        int len = nums.length;
-        int tmp = nums[index1 % len];
-        nums[index1] = nums[index2 % len];
-        nums[index2 % len] = tmp;
-    }
 }

@@ -11,8 +11,14 @@ import org.junit.Test;
 public class SolutionTest {
 
     @Test
-    public void run_solution4() {
+    public void run_solution1() {
         Solution solution = new Solution1();
+        runTest(solution);
+    }
+
+    @Test
+    public void run_solution2() {
+        Solution solution = new Solution2();
         runTest(solution);
     }
 
