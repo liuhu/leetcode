@@ -47,7 +47,7 @@ public class Solution2 implements Solution {
             }
 
             int val = isCarryBit ? sum % 10 : sum;
-            // 第一次
+            // 第一次 TODO; 用哨兵模式优化
             if (null == next) {
                 start.val = val;
                 next = start;

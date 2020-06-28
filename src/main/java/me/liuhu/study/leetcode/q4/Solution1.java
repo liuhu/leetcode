@@ -8,11 +8,23 @@ package me.liuhu.study.leetcode.q4;
 public class Solution1 implements Solution {
 
 
+    /**
+     * Time: O(m + n)
+     * Space: O(m + n)
+     * @param l1
+     * @param l2
+     * @return
+     */
     @Override
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         return numToListNode(noteNum(l1) + noteNum(l2));
     }
 
+    /**
+     * 链表数转常规整数
+     * @param node
+     * @return
+     */
     private int noteNum(ListNode node) {
         ListNode currentNote = node;
         int multiplyNum = 1;
@@ -27,6 +39,7 @@ public class Solution1 implements Solution {
 
     /**
      * 链表正序生成
+     * TODO; 这部分关于链表头的处理，可以使用哨兵模式
      * @param sum
      * @return
      */
