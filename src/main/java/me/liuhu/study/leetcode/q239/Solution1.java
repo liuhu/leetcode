@@ -13,7 +13,7 @@ public class Solution1 implements Solution {
     /**
      * 暴力解法
      * Time: O(n*k)
-     * Space: O(1)
+     * Space: O(1) 不包含结果
      * @param nums
      * @param k
      * @return
