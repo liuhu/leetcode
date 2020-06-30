@@ -23,9 +23,16 @@ public class SolutionTest {
         runTest(solution);
     }
 
+    @Test
+    public void run_solution3() {
+        Solution solution = new Solution3();
+        runTest(solution);
+    }
+
 
     private void runTest(Solution solution) {
         Assert.assertTrue(solution.isAnagram("anagram", "nagaram"));
+        Assert.assertFalse(solution.isAnagram("anagram", "a"));
         Assert.assertFalse(solution.isAnagram("ac", "bb"));
         Assert.assertFalse(solution.isAnagram("ja", "fe"));
     }
