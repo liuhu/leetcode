@@ -17,10 +17,16 @@ public class SolutionTest {
     }
 
 
-    private void runTest(Solution solution) {
-        //Assert.assertTrue(solution.isAnagram("anagram", "nagaram"));
-        //Assert.assertFalse(solution.isAnagram("ac", "bb"));
-        Assert.assertFalse(solution.isAnagram("ja", "fe"));
+    @Test
+    public void run_solution2() {
+        Solution solution = new Solution2();
+        runTest(solution);
+    }
 
+
+    private void runTest(Solution solution) {
+        Assert.assertTrue(solution.isAnagram("anagram", "nagaram"));
+        Assert.assertFalse(solution.isAnagram("ac", "bb"));
+        Assert.assertFalse(solution.isAnagram("ja", "fe"));
     }
 }
