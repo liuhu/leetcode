@@ -1,6 +1,7 @@
 package me.liuhu.study.leetcode.q144;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -12,17 +13,13 @@ public class Solution1 implements Solution {
 
     @Override
     public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> result = new ArrayList<>();
-        preorderTraversal(result, root);
-        return result;
-    }
-
-    private void preorderTraversal(List<Integer> result, TreeNode root) {
+        List<Integer> pre = new LinkedList<>();
         if (root == null) {
-            return;
+            return pre;
         }
-        result.add(root.val);
-        preorderTraversal(result, root.left);
-        preorderTraversal(result, root.right);
+        pre.add(root.val);
+        pre.addAll(preorderTraversal(root.left));
+        pre.addAll(preorderTraversal(root.right));
+        return pre;
     }
 }
