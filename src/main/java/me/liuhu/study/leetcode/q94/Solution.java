@@ -16,6 +16,12 @@ public interface Solution {
         TreeNode(int x) {
             val = x;
         }
+
+        TreeNode(int x, TreeNode left, TreeNode right) {
+            val = x;
+            this.left = left;
+            this.right = right;
+        }
     }
 
     List<Integer> inorderTraversal(TreeNode root);
