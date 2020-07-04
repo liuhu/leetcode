@@ -22,7 +22,7 @@ public class SolutionTest {
 
 
     private void runTest(Solution solution) {
-        List<Integer> res = solution.inorderTraversal(getTree());
+        List<Integer> res = solution.postorderTraversal(getTree());
         List<Integer> expected = Arrays.asList(3,4,1,5,6,2,0);
         Assert.assertArrayEquals(expected.toArray(), res.toArray());
     }

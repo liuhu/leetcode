@@ -22,6 +22,11 @@ public interface Solution {
             this.left = left;
             this.right = right;
         }
+
+        @Override
+        public String toString() {
+            return String.valueOf(val);
+        }
     }
 
     List<Integer> inorderTraversal(TreeNode root);

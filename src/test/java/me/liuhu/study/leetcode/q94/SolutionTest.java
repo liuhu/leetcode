@@ -41,4 +41,22 @@ public class SolutionTest {
 
         return _0;
     }
+
+    public Solution.TreeNode getTree2() {
+
+        Solution.TreeNode _8 = new Solution.TreeNode(8);
+        Solution.TreeNode _9 = new Solution.TreeNode(9);
+        Solution.TreeNode _5 = new Solution.TreeNode(5, _8, _9);
+
+        Solution.TreeNode _6 = new Solution.TreeNode(6);
+        Solution.TreeNode _7 = new Solution.TreeNode(7);
+        Solution.TreeNode _3 = new Solution.TreeNode(3, _6, _7);
+
+        Solution.TreeNode _4 = new Solution.TreeNode(4);
+        Solution.TreeNode _2 = new Solution.TreeNode(2, _4, _5);
+
+        Solution.TreeNode _1 = new Solution.TreeNode(1, _2, _3);
+
+        return _1;
+    }
 }
