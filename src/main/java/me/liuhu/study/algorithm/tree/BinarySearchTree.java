@@ -128,8 +128,7 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
             t.left = remove(x, t.left);
         else if (compareResult > 0)
             t.right = remove(x, t.right);
-        else if (t.left != null && t.right != null) // Two children
-        {
+        else if (t.left != null && t.right != null) { // Two children
             t.element = findMin(t.right).element;
             t.right = remove(t.element, t.right);
         } else
@@ -161,7 +160,6 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
         if (t != null)
             while (t.right != null)
                 t = t.right;
-
         return t;
     }
 
