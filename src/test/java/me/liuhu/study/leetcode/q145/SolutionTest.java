@@ -20,6 +20,12 @@ public class SolutionTest {
         runTest(new Solution2());
     }
 
+    @Test
+    public void run2() {
+        runTest(new Solution2_3());
+    }
+
+
 
     private void runTest(Solution solution) {
         List<Integer> res = solution.postorderTraversal(getTree());
