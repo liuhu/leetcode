@@ -1,25 +1,21 @@
 package me.liuhu.study.leetcode.q283;
 
-
 /**
  * @description:
  * @author: LiuHu
- * @create: 2020/6/23
+ * @create: 2020/7/7
  **/
-public class Solution3 implements Solution {
+public class Solution4_1 implements Solution {
 
-    /**
-     * 遍历交换
-     *
-     * 时间复杂度 O(n)
-     * 空间复杂度 O(1)
-     * @param nums
-     */
     @Override
     public void moveZeroes(int[] nums) {
-        int i = 0;
 
-        for (int j = 0; j < nums.length; j++) {
+        for (int i = 0, j = 0; j < nums.length; j++) {
+            if (nums[i] != 0) {
+                i++;
+                continue;
+            }
+
             if (nums[j] != 0) {
                 int tmp = nums[j];
                 nums[j] = nums[i];

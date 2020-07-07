@@ -34,12 +34,6 @@ public class SolutionTest {
 
 
     @Test
-    public void run_solution3() {
-        Solution solution = new Solution3();
-        runTest(solution);
-    }
-
-    @Test
     public void run_solution4() {
         Solution solution = new Solution4();
         runTest(solution);
