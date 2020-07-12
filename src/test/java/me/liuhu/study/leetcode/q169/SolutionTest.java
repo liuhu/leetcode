@@ -21,11 +21,18 @@ public class SolutionTest {
         runTest(solution);
     }
 
+    @Test
+    public void run2() {
+        System.out.println("run test ... ");
+        Solution solution = new Solution2();
+        runTest(solution);
+    }
+
 
     private void runTest(Solution solution) {
         long startTime = System.currentTimeMillis();
 
-        int[] nums = {2,2,1,1,1,2,2};
+        int[] nums = {2,2,1,1,1,1,1,2,2};
         int result = solution.majorityElement(nums);
         System.out.println(result);
 
