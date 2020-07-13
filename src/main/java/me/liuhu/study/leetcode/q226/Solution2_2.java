@@ -1,6 +1,7 @@
 package me.liuhu.study.leetcode.q226;
 
-import me.liuhu.study.effective.java.generic.Stack;
+
+import java.util.Stack;
 
 /**
  * @description:
