@@ -29,7 +29,10 @@ public class Solution1 implements Solution {
     @Override
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
+        for(int n : nums) list.add(n);
 
+        permute(result, list, 0);
         return result;
     }
 
