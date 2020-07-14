@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  * @create: 2020/7/13
  **/
 public class Solution1 implements Solution {
-    private static Map<String, List<String>> keyMap = new HashMap<String, List<String>>(){{
+    private static final Map<String, List<String>> keyMap = new HashMap<String, List<String>>(){{
         put("2", Arrays.asList("a", "b", "c"));
         put("3", Arrays.asList("d", "e", "f"));
         put("4", Arrays.asList("g", "h", "i"));
