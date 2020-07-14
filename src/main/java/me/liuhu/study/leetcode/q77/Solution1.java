@@ -37,7 +37,8 @@ public class Solution1 implements Solution {
         }
 
         for (int i = level; i < nums.size() ; i++) {
-            if (null != path && path.size() > 0 && path.getLast() >= nums.get(i)) {
+            // 剪枝
+            if (path.size() > 0 && path.getLast() >= nums.get(i)) {
                 continue;
             }
             path.addLast(nums.get(i));
