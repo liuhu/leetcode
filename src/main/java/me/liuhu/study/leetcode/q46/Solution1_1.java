@@ -37,6 +37,8 @@ public class Solution1_1 implements Solution {
     }
 
     public static void main(String[] args) {
-
+        Solution solution = new Solution1_1();
+        int[] nums = new int[]{1, 2, 3};
+        solution.permute(nums);
     }
 }
