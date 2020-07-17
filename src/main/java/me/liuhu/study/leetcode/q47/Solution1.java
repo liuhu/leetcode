@@ -25,21 +25,23 @@ public class Solution1 implements Solution {
     }
 
     private void dfs(Set<List<Integer>> result, List<Integer> path, boolean[] used, int[] nums, int level, int len) {
-        if (len == path.size()) {
+        if (len == level) {
             result.add(new ArrayList<>(path));
             return;
         }
 
         for (int i = 0; i < len ; i++) {
-            if (!used[i]) {
-                path.add(nums[i]);
-                used[i] = true;
-
-                dfs(result, path, used, nums, level + 1, len);
-
-                path.remove(path.size() - 1);
-                used[i] = false;
+            if (used[i]) {
+                continue;
             }
+
+            path.add(nums[i]);
+            used[i] = true;
+
+            dfs(result, path, used, nums, level + 1, len);
+
+            path.remove(path.size() - 1);
+            used[i] = false;
         }
     }
 
