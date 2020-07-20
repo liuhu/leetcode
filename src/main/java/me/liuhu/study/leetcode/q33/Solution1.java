@@ -9,11 +9,10 @@ public class Solution1 implements Solution {
 
     @Override
     public int search(int[] nums, int target) {
-
         int left = 0, right = nums.length - 1, mid;
-
         while (left <= right) {
             mid = ((right - left) >> 1) + left;
+            System.out.println("left:" + left + " right:" + right + " mid:" + mid);
             if (nums[mid] == target) {
                 return mid;
             }
@@ -44,6 +43,6 @@ public class Solution1 implements Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution1();
-        solution.search(new int[]{4,5,6,7,8,1,2}, 8);
+        solution.search(new int[]{4,5,6,7,8,1,2}, 2);
     }
 }
