@@ -3,23 +3,23 @@ package me.liuhu.study.leetcode.q55;
 /**
  * @description:
  * @author: LiuHu
- * @create: 2020/7/21
+ * @create: 2020/7/24
  **/
-public class Solution2 implements Solution {
+public class Solution2_1 implements Solution {
 
     @Override
     public boolean canJump(int[] nums) {
-        int c = 0;
-
+        int max = 0;
         for (int i = 0; i < nums.length; i++) {
-            if (i > c) {
+            if (i > max) {
                 return false;
             }
-            if (c > nums.length) {
+            if (max >= nums.length - 1) {
                 return true;
             }
-            c = Math.max(c, i + nums[i]);
+            max = Math.max(max, i + nums[i]);
         }
-        return true;
+        return false;
     }
+
 }
