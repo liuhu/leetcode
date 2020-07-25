@@ -7,15 +7,19 @@ package me.liuhu.study.leetcode.q75;
  **/
 public class Solution1 implements Solution {
 
+    // [2,0,2,1,1,0]
     @Override
     public void sortColors(int[] nums) {
-        int l = 0, r = nums.length - 1;
-        for (int i = 0; i <= r ; i++) {
+        int left = 0, right = nums.length - 1;
+        for (int i = 0; i <= right ; i++) {
             if (nums[i] == 0) {
-                swap(nums, i++, l++);
+                swap(nums, i, left);
+                left++;
             }
             if (nums[i] == 2) {
-                swap(nums, i--, r--);
+                swap(nums, i, right);
+                i--;
+                right--;
             }
         }
     }
