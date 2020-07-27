@@ -1,7 +1,6 @@
 package me.liuhu.study.leetcode.q322;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -21,22 +20,23 @@ public class Solution4 implements Solution {
     }
 
     public void helper(List<Integer> coins, int amount, int step) {
-        if (coins.contains(amount)) {
+        if (amount == 0) {
+            min = Math.min(min, step);
             return;
         }
-        if (amount <= 0) {
+        if (amount < 0) {
             return;
         }
-        min = Math.min(min, step);
+        //System.out.println(step);
         for (Integer coin : coins) {
             helper(coins, amount - coin, step + 1);
         }
     }
 
     public static void main(String[] args) {
-        Solution solution = new Solution1();
+        Solution solution = new Solution4();
         int[] c = new int[]{1,2,5};
 
-        System.out.println(solution.coinChange(c, 3));
+        System.out.println(solution.coinChange(c, 20));
     }
 }
