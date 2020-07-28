@@ -35,9 +35,9 @@ public class Solution1_1 implements Solution {
     }
 
     public static void main(String[] args) {
-        Solution solution = new Solution1_1();
+        Solution1_1 solution = new Solution1_1();
         int[] c = new int[]{1,2,5};
 
-        System.out.println(solution.coinChange(c, 11));
+        System.out.println(solution.coinChange(c, 100));
     }
 }

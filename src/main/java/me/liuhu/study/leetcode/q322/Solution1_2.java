@@ -13,7 +13,8 @@ public class Solution1_2 implements Solution {
     Integer min = Integer.MAX_VALUE;
     @Override
     public int coinChange(int[] coins, int amount) {
-        return dfs(coins, amount, 0, new ArrayList<>());
+        int res = dfs(coins, amount, 0, new ArrayList<>());
+        return res == 0 ? -1 : res;
     }
 
     private int dfs(int[] coins, int amount, int level, List<Integer> path) {
@@ -38,6 +39,6 @@ public class Solution1_2 implements Solution {
         Solution1_2 solution = new Solution1_2();
         int[] c = new int[]{1,2,5};
         System.out.println("组合方式总数: " + solution.coinChange(c, 5));
-        System.out.println("最小次数: " + solution.min);
+        System.out.println("最少硬币个数: " + solution.min);
     }
 }

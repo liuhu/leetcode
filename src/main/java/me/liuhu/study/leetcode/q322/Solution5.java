@@ -1,15 +1,13 @@
 package me.liuhu.study.leetcode.q322;
 
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
 
 /**
  * @description:
  * @author: LiuHu
  * @create: 2020/7/22
  **/
-public class Solution2 implements Solution {
+public class Solution5 implements Solution {
 
     int ans = Integer.MAX_VALUE;
 
@@ -48,9 +46,9 @@ public class Solution2 implements Solution {
 
 
     public static void main(String[] args) {
-        Solution solution = new Solution2();
-        int[] c = new int[]{1};
+        Solution5 solution = new Solution5();
+        int[] c = new int[]{1,2,5};
 
-        System.out.println(solution.coinChange(c, 3));
+        System.out.println(solution.coinChange(c, 100));
     }
 }

@@ -10,38 +10,42 @@ import java.util.List;
  **/
 public class Solution1_1 implements Solution {
     @Override
-    public int change(int amount, int[] coins) {
-        List<List<Integer>> result = new ArrayList<>();
-        dfs(result, new ArrayList<>(), amount, coins, 0);
-        System.out.println(result);
-        return result.size();
-    }
+    public int change(int sum, int[] coins) {
+        int[][] d = new int[coins.length+1][sum+1];
+        for (int i = 0; i <= coins.length; ++i) d[i][0] = 1;
 
-
-    private void dfs(List<List<Integer>> result, List<Integer> path, int amount, int[] coins, int level) {
-        if (amount == 0) {
-            result.add(new ArrayList<>(path));
-            return;
+        for (int i = 0; i < coins.length + 1; i++) {
+            for (int j = 0; j < sum+1; j++) {
+                System.out.printf(String.valueOf(d[i][j]));
+            }
+            System.out.println();
         }
-        if (amount > 0 && level < coins.length) {
-            int max = amount / coins[level];
-            for (int i = 0; i <= max; i++) {
-                if (amount >= i * coins[level]) {
-                    for (int j = 0; j < i; j++) {
-                        path.add(coins[level]);
-                    }
-                    dfs(result, path, amount - i * coins[level], coins, level + 1);
-                    for (int j = 0; j < i; j++) {
-                        path.remove(path.size() - 1);
-                    }
-                }
+
+        for (int i = 1; i <= coins.length; ++i) {
+            for (int j = 1; j <= sum; ++j) {
+                System.out.println("i = " + i + " j = " + j);
+                System.out.println("d[i][j-coins[i-1]] => " + "d[" + i + "][" + (j-coins[i-1]) + "] = " + ( j >= coins[i-1] ? d[i][j-coins[i-1]] : 0));
+                System.out.println("d[i-1][j] =>" + " d[" + (i - 1) + "][" + j  + "] = " + d[i-1][j]);
+
+                int useCurCoin = j >= coins[i-1] ? d[i][j-coins[i-1]] : 0;
+                d[i][j] = d[i-1][j] + useCurCoin;
+                System.out.println("d[i][j] => " + "d[" + i + "][" + j +"] = " +d[i][j]);
             }
         }
+
+        for (int i = 0; i < coins.length + 1; i++) {
+            for (int j = 0; j < sum+1; j++) {
+                System.out.printf(String.valueOf(d[i][j]));
+            }
+            System.out.println();
+        }
+
+        return d[coins.length][sum];
     }
 
     public static void main(String[] args) {
         Solution solution = new Solution1_1();
-        int r = solution.change(23, new int[]{1,2,5});
+        int r = solution.change(5, new int[]{1,2,5});
         System.out.println(r);
     }
 }

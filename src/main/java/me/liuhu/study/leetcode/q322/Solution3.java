@@ -44,6 +44,6 @@ public class Solution3 implements Solution {
         Solution solution = new Solution1();
         int[] c = new int[]{1,2,5};
 
-        System.out.println(solution.coinChange(c, 100));
+        System.out.println(solution.coinChange(c, -1));
     }
 }
