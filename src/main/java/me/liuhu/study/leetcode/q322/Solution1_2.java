@@ -10,7 +10,6 @@ import java.util.List;
  **/
 public class Solution1_2 implements Solution {
 
-    Integer min = Integer.MAX_VALUE;
     @Override
     public int coinChange(int[] coins, int amount) {
         int res = dfs(coins, amount, 0, new ArrayList<>());
@@ -20,7 +19,6 @@ public class Solution1_2 implements Solution {
     private int dfs(int[] coins, int amount, int level, List<Integer> path) {
         if (amount == 0) {
             System.out.println("方法: " + path);
-            min = Math.min(min, path.size());
             return 1;
         }
         if (amount < 0) {
@@ -39,6 +37,5 @@ public class Solution1_2 implements Solution {
         Solution1_2 solution = new Solution1_2();
         int[] c = new int[]{1,2,5};
         System.out.println("组合方式总数: " + solution.coinChange(c, 5));
-        System.out.println("最少硬币个数: " + solution.min);
     }
 }
