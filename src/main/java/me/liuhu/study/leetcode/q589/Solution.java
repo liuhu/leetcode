@@ -3,6 +3,9 @@ package me.liuhu.study.leetcode.q589;
 import java.util.List;
 
 /**
+ * 589. N叉树的前序遍历
+ * https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/
+ *
  * @description:
  * @author: LiuHu
  * @create: 2020/7/1
