@@ -1,6 +1,5 @@
 ### leetcode
-[leetcode](https://leetcode-cn.com/u/liu-hu) 坚持每日一题 ✊
-[https://leetcode-cn.com/u/liu-hu](https://leetcode-cn.com/u/liu-hu)
+[https://leetcode-cn.com/u/liu-hu](https://leetcode-cn.com/u/liu-hu) 坚持每日一题 ✊
 
 ### 算法学习总结
 归档至 Blog [链接](https://www.liuhu.me/categories/%E7%AE%97%E6%B3%95/index.html) 
