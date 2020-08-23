@@ -16,14 +16,17 @@ public class Solution1 implements Solution {
         d[0] = 1;
         int max = 1;
         for (int i = 1; i < nums.length; i++) {
+            int cur = -1;
+            // 计算 0 ~ i 中子序最长
             for (int j = 0; j < i; j++) {
-                // 如果 nums[i] > nums[[0~i)], 则说明 nums[i] 可以追加到之前到结果中
+                // nums[i] > nums[j], 则 nums[i] 可追加到原来 d[j] 的结果中
                 if (nums[i] > nums[j]) {
-                    d[i] = Math.max(d[i], d[j] + 1);
-                } else {
-                    d[i] = Math.max(d[i], 1);
+                    cur = Math.max(cur, d[j] + 1);
+                } else { // 否则, nums[i] 自成一个序列
+                    cur = Math.max(cur, 1);
                 }
             }
+            d[i] = Math.max(d[i], cur);
             max = Math.max(max, d[i]);
         }
         return max;
