@@ -34,4 +34,7 @@ public class Solution1 implements Solution {
         return maxLength;
     }
 
+    public static void main(String[] args) {
+        System.out.println(16&18);
+    }
 }
